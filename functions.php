@@ -21,5 +21,8 @@ require_once locate_template('/lib/custom.php');          // Custom functions
 
 // My includes
 
+if ( class_exists('Woocommerce') )
+{
 require_once locate_template('/lib/woocommerce.php');     // Store functions
 require_once locate_template('/lib/shop-forms.php');
+}
