@@ -3,6 +3,8 @@
  */
 
 @import "bootstrap/bootstrap.less";
+@import "footer.less";
+@import "store.less";
 
 /* ==========================================================================
    Base
@@ -27,6 +29,10 @@ padding-top: 50px;
       margin: 24px 0;
       color: #fff;
    }
+}
+.dropdown-menu {
+   .box-shadow(none);
+   opacity: .9;
 }
 
 
@@ -54,7 +60,12 @@ padding-top: 50px;
    ========================================================================== */
 
 .sidebar { }
-
+.widget {
+   ul {
+      list-style-type: none;
+      padding: 0;
+   }
+}
 
 
 /* ==========================================================================

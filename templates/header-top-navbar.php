@@ -24,6 +24,7 @@
   <div class="row">
     <div class="col-lg-12">
       <h1 class="page-title"><?php echo roots_title(); ?></h1>
+      <?php //if ( is_single() ) get_template_part( 'templates/single', 'meta' ); ?>
     </div>
   </div>
 </div>

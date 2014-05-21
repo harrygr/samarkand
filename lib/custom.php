@@ -2,15 +2,14 @@
 /**
  * Custom functions
  */
-function samarkand_styles(){
-	$fonts = array(
-		'Cabin:400,500,600,700,400italic,500italic',
-		'Raleway:400,700',
-		);
-	$font_stylesheet = '//fonts.googleapis.com/css?family=' . implode('|', $fonts);
-	wp_register_style( 'google_font', $font_stylesheet );
 
-	wp_enqueue_style( 'google_font' );
 
+/**
+* Add gallery attribute to galleries for lightbox
+*/
+add_filter( 'wp_get_attachment_link' , 'sa_add_gallery_rel' );
+function sa_add_gallery_rel( $attachment_link ) {
+	global $post;
+	$attachment_link = str_replace('<a', '<a data-fancybox-group="group-' . $post->ID . '"', $attachment_link);
+	return $attachment_link;
 }
-add_action('wp_enqueue_scripts', 'samarkand_styles', 100);

@@ -3,7 +3,45 @@
   margin-top: 20px;
 }
 
-
+/*
+   border-serrated - a zig zag triangle border with linear gradient
+   original SASS version: https://gist.github.com/justinmc/9837998
+*/
+.border-top-serrated(@size, @colorOuter) {
+    & {
+        position: relative;
+        padding-top: @size;
+    }
+    &:before {
+        top: 0px;
+        background-position: left top;
+        background:linear-gradient(-135deg, @colorOuter @size / 2, transparent 0), linear-gradient(135deg, @colorOuter @size / 2, transparent 0);
+        .border-serrated-helper(@size, @colorOuter);
+    }
+}
+.border-bottom-serrated(@size, @colorOuter) {
+    & {
+        position: relative;
+        padding-bottom: @size;
+    }
+    &:after {
+        bottom: 0px;
+        background-position: left bottom;
+        background:linear-gradient(-45deg, @colorOuter @size / 2, transparent 0), linear-gradient(45deg, @colorOuter @size / 2, transparent 0);
+        .border-serrated-helper(@size, @colorOuter);
+    }
+}
+ 
+.border-serrated-helper(@size, @colorOuter) {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: @size;
+    background-repeat: repeat-x;
+    background-size: @size @size;
+}
 //
 // Mixins
 // --------------------------------------------------
@@ -430,15 +468,16 @@
 // Alerts
 // -------------------------
 .alert-variant(@background; @border; @text-color) {
-  background-color: @background;
-  border-color: @border;
+  background-color: @bg-white;
+  //border-color: @border;
   color: @text-color;
+  border-left: 10px @border solid;
 
   hr {
     border-top-color: darken(@border, 5%);
   }
-  .alert-link {
-    color: darken(@text-color, 10%);
+  .alert-link, a {
+    //color: darken(@background, 32%);
   }
 }
 

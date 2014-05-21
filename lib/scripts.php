@@ -13,6 +13,15 @@
 function roots_scripts() {
   wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '9880649384aea9f1ee166331c0a30daa');
 
+  // Fonts stylesheets
+  $fonts = array(
+    'Cabin:400,500,600,700,400italic,500italic',
+    'Raleway:400,700',
+    );
+  $font_stylesheet = '//fonts.googleapis.com/css?family=' . implode('|', $fonts);
+  wp_register_style( 'google_font', $font_stylesheet );
+  wp_enqueue_style( 'google_font' );
+
   // jQuery is loaded using the same method from HTML5 Boilerplate:
   // Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
   // It's kept in the header instead of footer to avoid conflicts with plugins.
