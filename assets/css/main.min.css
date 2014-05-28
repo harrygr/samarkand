@@ -3950,7 +3950,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: transparent;
 }
 .navbar-default .navbar-text {
-  color: #777777;
+  color: #ffffff;
 }
 .navbar-default .navbar-nav > li > a {
   color: #ffffff;
@@ -5917,7 +5917,7 @@ a.out-of-stock:hover {
   display: inline-block;
   position: relative;
   width: 75px;
-  height: 35px;
+  height: 38px;
 }
 .quantity .qty {
   float: left;
@@ -5949,7 +5949,7 @@ a.out-of-stock:hover {
   border-color: #cccccc;
   float: right;
   width: 25px;
-  height: 18px;
+  height: 20px;
   position: absolute;
   right: 0;
   line-height: 1;
@@ -6093,15 +6093,28 @@ dl.variation dd {
 .rollover-item img:hover {
   opacity: 0.48;
 }
+h3 label {
+  font-weight: normal;
+}
 /* ==========================================================================
    Base
    ========================================================================== */
 body {
   padding-top: 50px;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 0;
+}
 /* ==========================================================================
    Header
    ========================================================================== */
+.site-logo {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
 .sub-header {
   background-color: #fd9f2b;
 }

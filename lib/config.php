@@ -8,6 +8,15 @@ add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails com
 add_theme_support('nice-search');           // Enable /?s= to /search/ redirect
 //add_theme_support('jquery-cdn');            // Enable to load jQuery from the Google CDN
 
+// Adds the ability to have a header image
+$args = array(
+  'width'         => 120,
+  'height'        => 120,
+  'default-image' => get_template_directory_uri() . '/assets/img/samarkand-logo-border.png',
+  'uploads'       => true,
+);
+add_theme_support( 'custom-header', $args );
+
 /**
  * Configuration values
  */
