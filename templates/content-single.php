@@ -9,6 +9,7 @@
     </div>
     <footer>
       <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
+      <?php get_template_part( '/templates/entry-footer' ); ?>
     </footer>
     <?php comments_template('/templates/comments.php'); ?>
   </article>
