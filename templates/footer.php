@@ -1,8 +1,35 @@
 <footer class="content-info top-buffer" role="contentinfo">
-  <div class="container">
-    <?php dynamic_sidebar('sidebar-footer'); ?>
-    <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
-  </div>
+	<div class="container">
+		<div class="row" id="#footer-widgets">
+			<?php dynamic_sidebar('sidebar-footer'); ?>
+		</div>
+		<?php 
+		$social_icons = [
+		'twitter'	=> '#',
+		'facebook'	=> '#',
+		]; 
+		?>
+		<div class="row">
+			
+			<div class="col-sm-6">
+				<ul class="social-icons">
+					<?php foreach ($social_icons as $classname => $url) : ?>
+					<li>
+						<a href="<?php echo $url ?>">
+							<span class="fa-stack fa-lg">
+								<i class="fa fa-circle fa-stack-2x"></i>
+								<i class="fa fa-<?php echo $classname; ?> fa-stack-1x fa-inverse social-icon"></i>
+							</span>
+						</a>
+					</li>
+				<?php endforeach; ?>
+				</ul>
+			</div>
+
+			<div class="col-sm-6 copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></div>
+
+		</div>
+	</div>
 </footer>
 
 <?php wp_footer(); ?>
@@ -10,20 +37,20 @@
 <script type="text/javascript">
 jQuery(function($){
   // use the custom woocommerce cookie to determine if the empty cart icon should show in the header or the full cart icon should show
-var cartCount = $.cookie("woocommerce_cart_count");
-var cartTotal = $.cookie("woocommerce_cart_total");
-if ( typeof(cartTotal) === "undefined") cartTotal = "£0.00";
+  var cartCount = $.cookie("woocommerce_cart_count");
+  var cartTotal = $.cookie("woocommerce_cart_total");
+  if ( typeof(cartTotal) === "undefined") cartTotal = "£0.00";
 
-var cart_url = "<?php echo $woocommerce->cart->get_cart_url(); ?>";
-var shop_url = "<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>";
+  var cart_url = "<?php echo $woocommerce->cart->get_cart_url(); ?>";
+  var shop_url = "<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>";
 
-if (typeof(cartCount) !== "undefined" && parseInt(cartCount, 10) > 0) {
-  $('#micro-cart .cart_link').html(cartCount + ' items');
-  $('#micro-cart .cart_link').attr('href', cart_url);
-} else {
-  $('#micro-cart .cart_link').html('Basket Empty');
-  $('#micro-cart .cart_link').attr('href', shop_url);
-}
-$('#micro-cart .cart_amount').html(cartTotal);
+  if (typeof(cartCount) !== "undefined" && parseInt(cartCount, 10) > 0) {
+  	$('#micro-cart .cart_link').html(cartCount + ' items');
+  	$('#micro-cart .cart_link').attr('href', cart_url);
+  } else {
+  	$('#micro-cart .cart_link').html('Basket Empty');
+  	$('#micro-cart .cart_link').attr('href', shop_url);
+  }
+  $('#micro-cart .cart_amount').html(cartTotal);
 });
 </script>

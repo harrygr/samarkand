@@ -30,7 +30,7 @@ get_currentuserinfo();
 
 		<?php foreach ( $address as $key => $field ) : ?>
 
-			<?php serge_form_field( $key, $field, ! empty( $_POST[ $key ] ) ? wc_clean( $_POST[ $key ] ) : $field['value'] ); ?>
+		<?php sam_form_field( $key, $field, ! empty( $_POST[ $key ] ) ? wc_clean( $_POST[ $key ] ) : $field['value'] ); ?>
 
 		<?php endforeach; ?>
 

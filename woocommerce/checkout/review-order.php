@@ -135,7 +135,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 					foreach ( $available_gateways as $gateway ) {
 						
 						switch ($gateway->id) {
-							case 'paypal':
+							case 'Striper':
 								$icon_class = 'fa-credit-card';
 								break;
 							
@@ -154,8 +154,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							$payment_desc[$gateway->id] = '';
 								if ( $gateway->has_fields() || $gateway->get_description() ) {
 									$payment_desc[$gateway->id] .= '<div class="payment_box payment_method_' . $gateway->id . '" ' . ( $gateway->chosen ? '' : 'style="display:none;"' ) . '>';
-									//$gateway->payment_fields();
-									$payment_desc[$gateway->id] .= '<p>' . $gateway->get_description() . '</p>';
+									ob_start(); $gateway->payment_fields(); $fields = ob_get_clean();
+									$payment_desc[$gateway->id] .= $fields;
 									$payment_desc[$gateway->id] .= '</div>';
 								}
 							?>

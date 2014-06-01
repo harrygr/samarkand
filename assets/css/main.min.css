@@ -6150,6 +6150,38 @@ input::-webkit-inner-spin-button {
 /* ==========================================================================
    Footer
    ========================================================================== */
+.copyright {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .copyright {
+    text-align: right;
+  }
+}
+.social-icons {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .social-icons {
+    text-align: left;
+  }
+}
+.social-icons li {
+  display: inline-block;
+}
+.social-icons .social-icon {
+  color: #33495e;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+.social-icons .fa-twitter:hover {
+  color: #00aced;
+}
+.social-icons .fa-facebook:hover {
+  color: #3b5998;
+}
 /* ==========================================================================
    WordPress Generated Classes
    See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes

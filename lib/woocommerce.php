@@ -56,4 +56,14 @@ function wg_view_all_products(){
 		return '9999';
 	}
 }
+
+// Hide unwanted tabs
+add_filter( 'woocommerce_product_tabs', 'serge_remove_product_tabs', 98 );
+function serge_remove_product_tabs( $tabs ) {
+    //unset( $tabs['description'] );      	// Remove the description tab
+    unset( $tabs['reviews'] ); 			// Remove the reviews tab
+    unset( $tabs['additional_information'] );  	// Remove the additional information tab
+
+    return $tabs;
+}
  ?>

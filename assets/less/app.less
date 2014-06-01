@@ -2,23 +2,23 @@
  * Roots 6.5.2
  */
 
-@import "bootstrap/bootstrap.less";
-@import "footer.less";
-@import "store.less";
+ @import "bootstrap/bootstrap.less";
+ @import "footer.less";
+ @import "store.less";
 
 /* ==========================================================================
    Base
    ========================================================================== */
 
-body { 
-padding-top: 50px;
-}
+   body { 
+    padding-top: 50px;
+  }
 
 //Remove the HTML5 spinner buttons on number inputs
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
     margin: 0; // <-- Apparently some margin are still there even though it's hidden
   }
 
@@ -27,29 +27,29 @@ padding-top: 50px;
    Header
    ========================================================================== */
 
-.site-logo{
-   @site-logo-padding: 15px;
-   padding-top:@site-logo-padding;
-   padding-bottom: @site-logo-padding;
-}
-.sub-header {
-   background-color: @or-melon-slice;
-   .page-title {
+   .site-logo{
+     @site-logo-padding: 15px;
+     padding-top:@site-logo-padding;
+     padding-bottom: @site-logo-padding;
+   }
+   .sub-header {
+     background-color: @or-melon-slice;
+     .page-title {
       margin: 24px 0;
       color: #fff;
-   }
-}
-.dropdown-menu {
+    }
+  }
+  .dropdown-menu {
    .box-shadow(none);
    opacity: .9;
-}
+ }
 
 
 /* ==========================================================================
    Content
    ========================================================================== */
 
-.content { }
+   .content { }
 
 
 
@@ -57,10 +57,10 @@ padding-top: 50px;
    Primary Content
    ========================================================================== */
 
-.main { }
+   .main { }
 
-/* Gallery Shortcode */
-.gallery-row { padding: 15px 0; }
+   /* Gallery Shortcode */
+   .gallery-row { padding: 15px 0; }
 
 
 
@@ -68,24 +68,24 @@ padding-top: 50px;
    Sidebar
    ========================================================================== */
 
-.sidebar { }
-.widget {
-   ul {
+   .sidebar { }
+   .widget {
+     ul {
       list-style-type: none;
       padding: 0;
-   }
-}
+    }
+  }
 
 
 /* ==========================================================================
    Posts
    ========================================================================== */
 
-.hentry header { }
-.hentry time { }
-.hentry .byline { }
-.hentry .entry-content { }
-.hentry footer { }
+   .hentry header { }
+   .hentry time { }
+   .hentry .byline { }
+   .hentry .entry-content { }
+   .hentry footer { }
 
 
 
@@ -93,8 +93,36 @@ padding-top: 50px;
    Footer
    ========================================================================== */
 
-.content-info { }
+   .content-info { }
+   .copyright {
+    text-align: center;
+    @media (min-width: @screen-sm-min) {
+      text-align:right;
+    }
+  }
+  .social-icons {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    @media (min-width: @screen-sm-min) {
+      text-align:left;
+    }
 
+    li {
+      display: inline-block;
+
+    }
+    .social-icon{
+      color:@footer-blue;
+      .transition(all 400ms ease)
+    }
+    .fa-twitter:hover {
+      color: @tw-blue;
+    }
+    .fa-facebook:hover {
+      color: @fb-blue;
+    }
+  }
 
 
 /* ==========================================================================
@@ -102,10 +130,10 @@ padding-top: 50px;
    See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
    ========================================================================== */
 
-.aligncenter { display: block; margin: 0 auto; }
-.alignleft { float: left; }
-.alignright { float: right; }
-figure.alignnone { margin-left: 0; margin-right: 0; }
+   .aligncenter { display: block; margin: 0 auto; }
+   .alignleft { float: left; }
+   .alignright { float: right; }
+   figure.alignnone { margin-left: 0; margin-right: 0; }
 
 
 
@@ -113,8 +141,8 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
    Media Queries
    ========================================================================== */
 
-@media (min-width: @screen-sm-min) { }
+   @media (min-width: @screen-sm-min) { }
 
-@media (min-width: @screen-md-min) { }
+   @media (min-width: @screen-md-min) { }
 
-@media (min-width: @screen-lg-min) { }
+   @media (min-width: @screen-lg-min) { }
