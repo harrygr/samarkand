@@ -14,7 +14,7 @@
  * remove or comment out: add_theme_support('jquery-cdn');
  * ======================================================================== */
 
-(function($) {
+ (function($) {
 
 // Use this variable to set up the common and page specific functions. If you 
 // rename this variable, you will also need to rename the namespace below.
@@ -22,7 +22,20 @@ var Roots = {
   // All pages
   common: {
     init: function() {
-      // JavaScript to be fired on all pages
+      $(function(){
+        //Add the 'zoom' class to image links
+        $('a[href*=".png"], a[href*=".gif"], a[href*=".jpeg"], a[href*=".jpg"]').each(function() {
+          // Prevent adding zoom class to query-string image links
+          if (this.href.indexOf('?') < 0) {
+            $(this).addClass('zoom');
+          }
+        });
+
+        $('.zoom').fancybox({
+          padding: 0,
+          title: false
+        });
+      });
     }
   },
   // Home page

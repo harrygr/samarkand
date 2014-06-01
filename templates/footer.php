@@ -1,6 +1,6 @@
 <footer class="content-info top-buffer" role="contentinfo">
 	<div class="container">
-		<div class="row" id="#footer-widgets">
+		<div class="row top-buffer" id="footer-widgets">
 			<?php dynamic_sidebar('sidebar-footer'); ?>
 		</div>
 		<?php 
