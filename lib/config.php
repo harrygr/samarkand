@@ -10,8 +10,8 @@ add_theme_support('nice-search');           // Enable /?s= to /search/ redirect
 
 // Adds the ability to have a header image
 $args = array(
-  'width'         => 120,
-  'height'        => 120,
+  'width'         => 150,
+  'height'        => 150,
   'default-image' => get_template_directory_uri() . '/assets/img/samarkand-logo-border.png',
   'uploads'       => true,
 );

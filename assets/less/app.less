@@ -29,15 +29,19 @@ input::-webkit-inner-spin-button {
    ========================================================================== */
 
    .site-logo{
-     @site-logo-padding: 15px;
+     @site-logo-padding: 10px;
      padding-top:@site-logo-padding;
      padding-bottom: @site-logo-padding;
    }
    .sub-header {
-     background-color: @or-melon-slice;
+
+     background-color: @light-blue;
+
      .page-title {
       margin: 24px 0;
       color: #fff;
+      text-shadow: @an-white 0px 1px 1px;
+
     }
   }
   .dropdown-menu {
@@ -97,8 +101,11 @@ input::-webkit-inner-spin-button {
    .content-info { }
    #footer-widgets {
     text-align: center;
-   }
-   .copyright {
+    .widget {
+      margin-bottom: 2*@padding-large-vertical;
+    }
+  }
+  .copyright {
     text-align: center;
     @media (min-width: @screen-sm-min) {
       text-align:right;

@@ -4168,8 +4168,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f55d2c;
-  border-color: #f4450c;
+  background-color: #989377;
+  border-color: #878267;
 }
 .navbar-default .navbar-brand {
   color: #ffffff;
@@ -4194,7 +4194,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #ffffff;
-  background-color: #fd9f2b;
+  background-color: #cac5ac;
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
@@ -4207,19 +4207,19 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #e3400b;
+  background-color: #7d795f;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #ffffff;
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #f4450c;
+  border-color: #878267;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #fd9f2b;
+  background-color: #cac5ac;
   color: #ffffff;
 }
 @media (max-width: 767px) {
@@ -4235,7 +4235,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #ffffff;
-    background-color: #fd9f2b;
+    background-color: #cac5ac;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
@@ -6342,15 +6342,16 @@ input::-webkit-inner-spin-button {
    Header
    ========================================================================== */
 .site-logo {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .sub-header {
-  background-color: #fd9f2b;
+  background-color: #abded6;
 }
 .sub-header .page-title {
   margin: 24px 0;
   color: #fff;
+  text-shadow: #989377 0px 1px 1px;
 }
 .dropdown-menu {
   -webkit-box-shadow: none;
@@ -6382,6 +6383,9 @@ input::-webkit-inner-spin-button {
    ========================================================================== */
 #footer-widgets {
   text-align: center;
+}
+#footer-widgets .widget {
+  margin-bottom: 20px;
 }
 .copyright {
   text-align: center;
