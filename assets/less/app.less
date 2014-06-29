@@ -1,4 +1,4 @@
-/*!
+  /*!
  * Roots 6.5.2
  */
 
@@ -32,22 +32,34 @@ input::-webkit-inner-spin-button {
      @site-logo-padding: 10px;
      padding-top:@site-logo-padding;
      padding-bottom: @site-logo-padding;
-   }
-   .sub-header {
-
-     background-color: @light-blue;
-
-     .page-title {
-      margin: 24px 0;
-      color: #fff;
-      text-shadow: @an-white 0px 1px 1px;
-
+     text-align: center;
+     @media (min-width: @screen-sm-min) { 
+      text-align: right;
     }
   }
-  .dropdown-menu {
-   .box-shadow(none);
-   opacity: .9;
- }
+  .sub-header {
+
+    background-color: @brand3;
+
+   .page-title {
+    margin: 24px 0;
+    color: #fff;
+    text-shadow: @an-white 0px 1px 1px;
+
+    font-size:62px;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+
+    text-align: center;
+    @media (min-width: @screen-sm-min) { 
+      text-align: left;
+    }
+  }
+}
+.dropdown-menu {
+ .box-shadow(none);
+ opacity: .9;
+}
 
 
 /* ==========================================================================

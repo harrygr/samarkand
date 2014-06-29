@@ -16,6 +16,7 @@
 
  (function($) {
 
+
 // Use this variable to set up the common and page specific functions. If you 
 // rename this variable, you will also need to rename the namespace below.
 var Roots = {
@@ -26,7 +27,7 @@ var Roots = {
         //Add the 'zoom' class to image links
         $('a[href*=".png"], a[href*=".gif"], a[href*=".jpeg"], a[href*=".jpg"]').each(function() {
           // Prevent adding zoom class to query-string image links
-          if (this.href.indexOf('?') < 0) {
+          if (this.href.indexOf('?') < 0 && !$(this).hasClass("thumbReplace")) {
             $(this).addClass('zoom');
           }
         });
@@ -35,9 +36,41 @@ var Roots = {
           padding: 0,
           title: false
         });
-      });
-    }
-  },
+
+        var $mainImageContainer = $('a.woocommerce-main-image');
+
+// Add the full size image as the product image data-src attribute
+var oldImageFS = $mainImageContainer.attr('href');
+$mainImageContainer.children('img.wp-post-image').data('src', oldImageFS);
+
+var medSuffix = "-350x482", smallSuffix = "-160x220";
+$mainImageContainer.zoom();
+
+// Handle inserting the mini thumbnails into the main product image when clicked
+$('.thumbReplace').click(function(e){
+          // Prevent from loading the image directly
+          e.preventDefault();
+
+          // remove the original zoom
+          $mainImageContainer.trigger('zoom.destroy');
+
+          // Get the URLs of the thumbnail just clicked
+          var newImageFS = $(this).attr('href'),
+              newImageMed = $(this).children('img').attr('src').replace(smallSuffix, medSuffix);
+
+          // Replace the main image with the new images
+          $mainImageContainer.attr('href', newImageFS);
+          $mainImageContainer.children('img.wp-post-image').attr('src', newImageMed);
+          $mainImageContainer.children('img.wp-post-image').data('src', newImageFS);
+
+          // Reinvoke the zoom plugin
+          $('a.woocommerce-main-image').zoom();
+        });
+
+});
+
+}
+},
   // Home page
   home: {
     init: function() {

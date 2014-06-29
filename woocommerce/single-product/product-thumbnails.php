@@ -22,7 +22,7 @@ if ( $attachment_ids ) {
 
 		foreach ( $attachment_ids as $attachment_id ) {
 
-			$classes = array( 'zoom' );
+			$classes = array( 'thumbReplace' );
 
 			if ( $loop == 0 || $loop % $columns == 0 )
 				$classes[] = 'first';

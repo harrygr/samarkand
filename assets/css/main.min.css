@@ -6088,6 +6088,9 @@ a.out-of-stock:hover {
 .product-thumbnail a:hover {
   text-decoration: none;
 }
+.product a.woocommerce-main-image {
+  display: block;
+}
 .product h3 {
   font-family: Raleway, Cabin, "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.6;
@@ -6344,14 +6347,29 @@ input::-webkit-inner-spin-button {
 .site-logo {
   padding-top: 10px;
   padding-bottom: 10px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .site-logo {
+    text-align: right;
+  }
 }
 .sub-header {
-  background-color: #abded6;
+  background-color: #4d8580;
 }
 .sub-header .page-title {
   margin: 24px 0;
   color: #fff;
   text-shadow: #989377 0px 1px 1px;
+  font-size: 62px;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .sub-header .page-title {
+    text-align: left;
+  }
 }
 .dropdown-menu {
   -webkit-box-shadow: none;
