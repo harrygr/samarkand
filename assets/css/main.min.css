@@ -6349,18 +6349,12 @@ input::-webkit-inner-spin-button {
   padding-bottom: 10px;
   text-align: center;
 }
-@media (min-width: 768px) {
-  .site-logo {
-    text-align: right;
-  }
-}
 .sub-header {
-  background-color: #4d8580;
+  border-bottom: 1px #cac5ac solid;
 }
 .sub-header .page-title {
   margin: 24px 0;
   color: #fff;
-  text-shadow: #989377 0px 1px 1px;
   font-size: 62px;
   text-transform: uppercase;
   letter-spacing: -2px;

@@ -33,15 +33,15 @@
 <header class="sub-header">
   <div class="container title-header">
     <div class="row">
-      <div class="col-sm-6 col-sm-push-6 site-logo">
+      <div class="col-sm-12 colno-sm-push-6 site-logo">
         <a href="<?php bloginfo("url"); ?>" id="masthead-link">
           <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width;?>">
         </a>
       </div>
-      <div class="col-sm-6 col-sm-pull-6">
+<!--       <div class="col-sm-6 col-sm-pull-6">
         <h1 class="page-title"><?php echo roots_title(); ?></h1>
         <?php //if ( is_single() ) get_template_part( 'templates/single', 'meta' ); ?>
-      </div>
+      </div> -->
     </div>
   </div>
 </header>
