@@ -5,8 +5,8 @@
 		</div>
 		<?php 
 		$social_icons = [
-		'twitter'	=> '#',
-		'facebook'	=> '#',
+		'twitter'	=> of_get_option('twitter_url', '#'),
+		'facebook'	=> of_get_option('facebook_url', '#'),
 		]; 
 		?>
 		<div class="row">

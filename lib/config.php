@@ -20,7 +20,8 @@ add_theme_support( 'custom-header', $args );
 /**
  * Configuration values
  */
-define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y (Note: Universal Analytics only, not Classic Analytics)
+$analytics_id = of_get_option( 'analytics_id' );
+define('GOOGLE_ANALYTICS_ID', $analytics_id); // UA-XXXXX-Y (Note: Universal Analytics only, not Classic Analytics)
 define('POST_EXCERPT_LENGTH', 40); // Length in words for excerpt_length filter (http://codex.wordpress.org/Plugin_API/Filter_Reference/excerpt_length)
 
 /**
