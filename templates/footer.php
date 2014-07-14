@@ -13,29 +13,35 @@
 			
 			<div class="col-sm-6">
 				<ul class="social-icons">
-					<?php foreach ($social_icons as $classname => $url) : ?>
-					<li>
-						<a href="<?php echo $url ?>">
-							<span class="fa-stack fa-lg">
-								<i class="fa fa-circle fa-stack-2x"></i>
-								<i class="fa fa-<?php echo $classname; ?> fa-stack-1x fa-inverse social-icon"></i>
-							</span>
-						</a>
-					</li>
-				<?php endforeach; ?>
-				</ul>
+					<?php 
+					foreach ($social_icons as $classname => $url) : 
+						if ( $url != '#' ) :
+							?>
+						<li>
+							<a href="<?php echo $url ?>">
+								<span class="fa-stack fa-lg">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-<?php echo $classname; ?> fa-stack-1x fa-inverse social-icon"></i>
+								</span>
+							</a>
+						</li>
+						<?php 
+						endif;
+					endforeach; 
+					?>
+					</ul>
+				</div>
+
+				<div class="col-sm-6 copyright">&copy; <?php echo date('Y'); bloginfo('name'); ?></div>
+
 			</div>
-
-			<div class="col-sm-6 copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></div>
-
 		</div>
-	</div>
-</footer>
+	</footer>
 
-<?php wp_footer(); ?>
-<?php if(!isset($woocommerce)) global $woocommerce; ?>
-<script type="text/javascript">
-jQuery(function($){
+	<?php wp_footer(); ?>
+	<?php if(!isset($woocommerce)) global $woocommerce; ?>
+	<script type="text/javascript">
+	jQuery(function($){
   // use the custom woocommerce cookie to determine if the empty cart icon should show in the header or the full cart icon should show
   var cartCount = $.cookie("woocommerce_cart_count");
   var cartTotal = $.cookie("woocommerce_cart_total");
@@ -53,4 +59,4 @@ jQuery(function($){
   }
   $('#micro-cart .cart_amount').html(cartTotal);
 });
-</script>
+	</script>
