@@ -14,13 +14,17 @@ $args = array(
   'height'        => 150,
   'default-image' => get_template_directory_uri() . '/assets/img/samarkand-logo-border.png',
   'uploads'       => true,
-);
+  );
 add_theme_support( 'custom-header', $args );
 
 /**
  * Configuration values
  */
-$analytics_id = of_get_option( 'analytics_id' );
+$analytics_id = '';
+if ( function_exists('of_get_option') )
+{
+  $analytics_id = of_get_option( 'analytics_id' );
+}
 define('GOOGLE_ANALYTICS_ID', $analytics_id); // UA-XXXXX-Y (Note: Universal Analytics only, not Classic Analytics)
 define('POST_EXCERPT_LENGTH', 40); // Length in words for excerpt_length filter (http://codex.wordpress.org/Plugin_API/Filter_Reference/excerpt_length)
 
@@ -66,15 +70,15 @@ function roots_display_sidebar() {
     array(
       'is_404',
       'is_front_page'
-    ),
+      ),
     /**
      * Page template checks (via is_page_template())
      * Any of these page templates that return true won't show the sidebar
      */
     array(
       'template-custom.php'
-    )
-  );
+      )
+    );
 
   return apply_filters('roots_display_sidebar', $sidebar_config->display);
 }
