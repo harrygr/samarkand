@@ -6339,6 +6339,9 @@ body {
   max-width: 100%;
   height: auto;
 }
+.home-tile img {
+  width: 100%;
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
