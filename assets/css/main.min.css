@@ -6350,6 +6350,7 @@ input::-webkit-inner-spin-button {
   text-align: center;
 }
 .sub-header {
+  background-color: #abded6;
   border-bottom: 1px #cac5ac solid;
 }
 .sub-header .page-title {

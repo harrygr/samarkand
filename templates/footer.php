@@ -5,8 +5,8 @@
 		</div>
 		<?php 
 		$social_icons = [
-		'twitter'	=> of_get_option('twitter_url', '#'),
-		'facebook'	=> of_get_option('facebook_url', '#'),
+		'twitter'	=> of_get_option('twitter_url', ''),
+		'facebook'	=> of_get_option('facebook_url', ''),
 		]; 
 		?>
 		<div class="row">
@@ -15,7 +15,7 @@
 				<ul class="social-icons">
 					<?php 
 					foreach ($social_icons as $classname => $url) : 
-						if ( $url != '#' ) :
+						if ( $url && $url != '' ) :
 							?>
 						<li>
 							<a href="<?php echo $url ?>">
@@ -32,7 +32,7 @@
 					</ul>
 				</div>
 
-				<div class="col-sm-6 copyright">&copy; <?php echo date('Y'); bloginfo('name'); ?></div>
+				<div class="col-sm-6 copyright">&copy; <?php echo date('Y') . ' '; bloginfo('name'); ?></div>
 
 			</div>
 		</div>

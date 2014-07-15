@@ -2,7 +2,7 @@
 /**
  * Review order form
  *
- * @author 		WooThemes
+ * @author 		WooThemes/HG
  * @package 	WooCommerce/Templates
  * @version     2.1.0
  */
