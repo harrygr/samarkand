@@ -54,6 +54,8 @@ add_filter('loop_shop_per_page', 'wg_view_all_products');
 function wg_view_all_products(){
 	if(isset($_GET['view']) && $_GET['view'] === 'all'){
 		return '9999';
+	} else {
+		return '12';
 	}
 }
 

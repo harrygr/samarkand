@@ -43,7 +43,7 @@ var Roots = {
 var oldImageFS = $mainImageContainer.attr('href');
 $mainImageContainer.children('img.wp-post-image').data('src', oldImageFS);
 
-var medSuffix = "-350x482", smallSuffix = "-160x220";
+var medSuffix = "-300x415", smallSuffix = "-160x220";
 $mainImageContainer.zoom();
 
 // Handle inserting the mini thumbnails into the main product image when clicked
