@@ -69,6 +69,7 @@
         <label>Card Verification Number <span class="required">*</span></label>
         <input class="input-text form-control" type="text" maxlength="4" data-stripe="cvc" value="" />
       </div>
+      <div class="col-md-12"><p>Payment is processed securely by <a href="https://stripe.com/gb" target="_blank">Stripe</a>. Samarkand Design does not store your card details.</p></div>
     </div>
 
   </div>
