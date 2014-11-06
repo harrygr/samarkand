@@ -111,7 +111,7 @@ function custom_credit_card_fields($fields, $id)
 		<label for="' . esc_attr( $id ) . '-card-cvc">' . __( 'Card Code', 'woocommerce' ) . ' <span class="required">*</span></label>
 		<input id="' . esc_attr( $id ) . '-card-cvc" class="form-control input-text wc-credit-card-form-card-cvc" type="text" autocomplete="off" placeholder="' . __( 'CVC', 'woocommerce' ) . '" name="' . ( $args['fields_have_names'] ? 1 . '-card-cvc' : '' ) . '" />
 		</p>',
-		'card-info-message'	=>	'<div class="clearfix"></div><p class="col-sm-12">Payment is processed securely by <a href="http://stripe.com" title="Stripe Website" target="_blank">Stripe</a>. Serge DeNimes does not store your card details.</p>'
+		'card-info-message'	=>	'<div class="clearfix"></div><p class="col-sm-12">Payment is processed securely by <a href="http://stripe.com" title="Stripe Website" target="_blank">Stripe</a>. ' . get_bloginfo('name') . ' does not store your card details.</p>'
 		);
 return $fields;
 }
