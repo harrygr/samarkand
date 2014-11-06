@@ -60,12 +60,59 @@ function wg_view_all_products(){
 }
 
 // Hide unwanted tabs
-add_filter( 'woocommerce_product_tabs', 'serge_remove_product_tabs', 98 );
-function serge_remove_product_tabs( $tabs ) {
+add_filter( 'woocommerce_product_tabs', 'samarkand_remove_product_tabs', 98 );
+function samarkand_remove_product_tabs( $tabs ) {
     //unset( $tabs['description'] );      	// Remove the description tab
     unset( $tabs['reviews'] ); 			// Remove the reviews tab
     unset( $tabs['additional_information'] );  	// Remove the additional information tab
 
     return $tabs;
+}
+
+// Hook in
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+// Our hooked in function - $fields is passed via the filter!
+function custom_override_checkout_fields( $fields ) {
+	foreach ($fields as $k1 => $subfields)
+	{
+		foreach ($subfields as $k2 => $field) 
+		{
+			// add classes
+			$fields[$k1][$k2]['class'][] = 'form-group';
+			$fields[$k1][$k2]['input_class'][] = 'form-control';
+		}
+	}
+	//pr($fields);
+     // $fields['billing']['billing_first_name']['placeholder'] = 'My new placeholder';
+     // $fields['billing']['billing_first_name']['label'] = 'My new label';
+	return $fields;
+}
+
+add_filter( 'woocommerce_credit_card_form_fields' , 'custom_credit_card_fields', 10, 2 );
+/**
+ * Filter the default WooCommerce Credit Card form fields to provide bootstrap styling
+ * @param  Array $fields The default fields
+ * @param  string $id The identifier of the gateway
+ * @return Array An array of the payment fields
+ */
+function custom_credit_card_fields($fields, $id)
+{
+	$args['fields_have_names'] = 0;
+	$fields = array(
+		'card-number-field' => '<p class="form-row form-row-wide form-group col-md-6">
+		<label for="' . esc_attr( $id ) . '-card-number">' . __( 'Card Number', 'woocommerce' ) . ' <span class="required">*</span></label>
+		<input id="' . esc_attr( $id ) . '-card-number" class="form-control input-text wc-credit-card-form-card-number" type="text" maxlength="20" autocomplete="off" placeholder="•••• •••• •••• ••••" name="' . ( $args['fields_have_names'] ? 1 . '-card-number' : '' ) . '" />
+		</p>',
+		'card-expiry-field' => '<p class="form-row form-row-first form-group col-md-3 col-xs-6">
+		<label for="' . esc_attr( $id ) . '-card-expiry">' . __( 'Expiry (MM/YY)', 'woocommerce' ) . ' <span class="required">*</span></label>
+		<input id="' . esc_attr( $id ) . '-card-expiry" class="form-control input-text wc-credit-card-form-card-expiry" type="text" autocomplete="off" placeholder="' . __( 'MM / YY', 'woocommerce' ) . '" name="' . ( $args['fields_have_names'] ? 1 . '-card-expiry' : '' ) . '" />
+		</p>',
+		'card-cvc-field' => '<p class="form-row form-row-last form-group col-md-3 col-xs-6">
+		<label for="' . esc_attr( $id ) . '-card-cvc">' . __( 'Card Code', 'woocommerce' ) . ' <span class="required">*</span></label>
+		<input id="' . esc_attr( $id ) . '-card-cvc" class="form-control input-text wc-credit-card-form-card-cvc" type="text" autocomplete="off" placeholder="' . __( 'CVC', 'woocommerce' ) . '" name="' . ( $args['fields_have_names'] ? 1 . '-card-cvc' : '' ) . '" />
+		</p>',
+		'card-info-message'	=>	'<div class="clearfix"></div><p class="col-sm-12">Payment is processed securely by <a href="http://stripe.com" title="Stripe Website" target="_blank">Stripe</a>. Serge DeNimes does not store your card details.</p>'
+		);
+return $fields;
 }
  ?>
