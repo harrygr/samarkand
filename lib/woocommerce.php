@@ -59,16 +59,6 @@ function wg_view_all_products(){
 	}
 }
 
-// Hide unwanted tabs
-add_filter( 'woocommerce_product_tabs', 'samarkand_remove_product_tabs', 98 );
-function samarkand_remove_product_tabs( $tabs ) {
-    //unset( $tabs['description'] );      	// Remove the description tab
-    unset( $tabs['reviews'] ); 			// Remove the reviews tab
-    unset( $tabs['additional_information'] );  	// Remove the additional information tab
-
-    return $tabs;
-}
-
 // Hook in
 add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
 // Our hooked in function - $fields is passed via the filter!

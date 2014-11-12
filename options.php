@@ -27,33 +27,52 @@ function optionsframework_option_name() {
  */
 
 function optionsframework_options() {
-$options = [];
+	$options = [];
 
-$options[] = [
-		'name' => __('General Settings', 'options_check'),
-		'type' => 'heading',
-];
 	$options[] = [
-		'name' => __('Facebook Page URL', 'options_check'),
-		'desc' => __('Used for the footer facebook button', 'options_check'),
-		'id' => 'facebook_url',
-		'std' => '',
-		'type' => 'text'
-		];
-			$options[] = [
-		'name' => __('Twitter Profile URL', 'options_check'),
-		'desc' => __('Used for the footer twitter button', 'options_check'),
-		'id' => 'twitter_url',
-		'std' => '',
-		'type' => 'text'
-		];
-					$options[] = [
-		'name' => __('Google Analytics ID', 'options_check'),
-		'desc' => __('', 'options_check'),
-		'id' => 'analytics_id',
-		'std' => '',
-		'type' => 'text'
-		];
+	'name' => __('General Settings', 'options_check'),
+	'type' => 'heading',
+	];
+	$options[] = [
+	'name' => __('Facebook Page URL', 'options_check'),
+	'desc' => __('Used for the footer facebook button', 'options_check'),
+	'id' => 'facebook_url',
+	'std' => '',
+	'type' => 'text'
+	];
+	$options[] = [
+	'name' => __('Twitter Profile URL', 'options_check'),
+	'desc' => __('Used for the footer twitter button', 'options_check'),
+	'id' => 'twitter_url',
+	'std' => '',
+	'type' => 'text'
+	];
+	$options[] = [
+	'name' => __('Google Analytics ID', 'options_check'),
+	'desc' => __('', 'options_check'),
+	'id' => 'analytics_id',
+	'std' => '',
+	'type' => 'text'
+	];
+
+	$options[] = array(
+		'name' => __('Shop Settings', 'options_check'),
+		'type' => 'heading');
+
+	$wp_editor_settings = array(
+		'wpautop' => true, // Default
+		'textarea_rows' => 5,
+		'tinymce' => false,
+		);
+
+	$options[] = array(
+		'name' => __('Delivery Tab Content', 'options_check'),
+		'desc' => 'The content in the Delivery/Return tab for products',
+		'id' => 'delivery_tab_content',
+		'type' => 'editor',
+		'settings' => $wp_editor_settings );
+
+				//------------------------//
 
 
 

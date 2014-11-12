@@ -24,5 +24,6 @@ require_once locate_template('/lib/custom.php');          // Custom functions
 if ( class_exists('Woocommerce') )
 {
 require_once locate_template('/lib/woocommerce.php');     // Store functions
+require_once locate_template( '/lib/shop-tabs.php' );
 require_once locate_template('/lib/shop-forms.php');
 }
