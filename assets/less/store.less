@@ -157,30 +157,57 @@ h3 label{
 	font-weight: normal;
 }
 
-// striper credit card form
+// // striper credit card form
+// .wc-credit-card-form-card-number {
+// 	@cc_offset: 32px;
+// 	@cc_start: 4px;
+// 	background-image: url('../img/credit-cards-v-1x.png');
+// 	background-position: 99% -999px;
+// 	background-repeat: no-repeat;
+// 	&.visa {
+// 		background-position: 99% @cc_start - @cc_offset * 5;
+// 	}
+// 	&.mastercard {
+// 		background-position: 99% @cc_start - @cc_offset * 4;
+// 	}
+// 	&.amex {
+// 		background-position: 99% @cc_start - @cc_offset * 3;
+// 	}
+// 	&.dinersclub {
+// 		background-position: 99% @cc_start - @cc_offset * 2;
+// 	}
+// 	&.jcb {
+// 		background-position: 99% @cc_start - @cc_offset * 1;
+// 	}
+// 	&.discover {
+// 		background-position: 99% @cc_start - @cc_offset * 0;
+// 	}
+// }
 .wc-credit-card-form-card-number {
-	@cc_offset: 32px;
-	@cc_start: 4px;
-	background-image: url('../img/credit-cards-v-1x.png');
+	@cc_offset: 63px;
+	@cc_start: 2px;
+	background-image: url('../img/cards1.svg');
+	//background-position: 99% -999px;
 	background-position: 99% -999px;
+	background-size: 48px;
 	background-repeat: no-repeat;
 	&.visa {
-		background-position: 99% @cc_start - @cc_offset * 5;
+		background-position: 99% @cc_start - @cc_offset * 0;
 	}
 	&.mastercard {
-		background-position: 99% @cc_start - @cc_offset * 4;
-	}
-	&.amex {
-		background-position: 99% @cc_start - @cc_offset * 3;
-	}
-	&.dinersclub {
-		background-position: 99% @cc_start - @cc_offset * 2;
-	}
-	&.jcb {
 		background-position: 99% @cc_start - @cc_offset * 1;
 	}
+	&.amex {
+		background-position: 99% @cc_start - @cc_offset * 2;
+	}
+	&.dinersclub {
+		background-position: 99% @cc_start - @cc_offset * 400;
+	}
+	&.jcb {
+		background-position: 99% @cc_start - @cc_offset * 3;
+	}
 	&.discover {
-		background-position: 99% @cc_start - @cc_offset * 0;
+		background-position: 99% @cc_start - @cc_offset * 4;
 	}
 }
 #mg-stripe-errorbox {
