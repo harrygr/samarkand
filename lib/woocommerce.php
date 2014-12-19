@@ -1,6 +1,24 @@
 <?php 
 add_theme_support( 'woocommerce' );
 
+// TEMPORARY
+// Hide add to cart
+
+if (of_get_option('close_store', false))
+{
+	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+	if (of_get_option('store_notice_visible', false))
+	{
+		add_action('woocommerce_before_main_content', 'samarkand_store_wide_notice');
+	}
+}
+
+
+function samarkand_store_wide_notice()
+{
+	echo "<div class='alert alert-info top-buffer'>" . of_get_option('store_notice_content', '') . "</div>";
+}
+
 //prevent loading of default woocommerce styles
 add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 

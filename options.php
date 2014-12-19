@@ -47,6 +47,15 @@ function optionsframework_options() {
 	'std' => '',
 	'type' => 'text'
 	];
+	
+	$options[] = [
+	'name' => __('Instagram Profile URL', 'options_check'),
+	'desc' => __('Used for the footer Instagram Icon', 'options_check'),
+	'id' => 'instagram_url',
+	'std' => '',
+	'type' => 'text'
+	];
+	
 	$options[] = [
 	'name' => __('Google Analytics ID', 'options_check'),
 	'desc' => __('', 'options_check'),
@@ -69,6 +78,25 @@ function optionsframework_options() {
 		'name' => __('Delivery Tab Content', 'options_check'),
 		'desc' => 'The content in the Delivery/Return tab for products',
 		'id' => 'delivery_tab_content',
+		'type' => 'editor',
+		'settings' => $wp_editor_settings );
+		
+	$options[] = array(
+		'name' => __('Disable purchasing. Products can still be viewed but not added to cart', 'options_check'),
+		'desc' => 'Close the Store',
+		'id' => 'close_store',
+		'type' => 'checkbox',	);
+	
+	$options[] = array(
+		'name' => __('Store wide notice', 'options_check'),
+		'desc' => 'Show notice',
+		'id' => 'store_notice_visible',
+		'type' => 'checkbox',	);
+		
+	$options[] = array(
+		'name' => null,
+		'desc' => 'Store wide notice content',
+		'id' => 'store_notice_content',
 		'type' => 'editor',
 		'settings' => $wp_editor_settings );
 
