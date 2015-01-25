@@ -8,6 +8,7 @@
 		'twitter'	=> of_get_option('twitter_url', ''),
 		'instagram'	=> of_get_option('instagram_url', ''),
 		'facebook'	=> of_get_option('facebook_url', ''),
+		'pinterest' => of_get_option('pinterest_url', ''),
 		]; 
 		?>
 		<div class="row">

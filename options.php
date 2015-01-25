@@ -55,6 +55,14 @@ function optionsframework_options() {
 	'std' => '',
 	'type' => 'text'
 	];
+
+	$options[] = [
+	'name' => __('Pinterest Profile URL', 'options_check'),
+	'desc' => __('Used for the footer Pinterest Icon', 'options_check'),
+	'id' => 'pinterest_url',
+	'std' => '',
+	'type' => 'text'
+	];
 	
 	$options[] = [
 	'name' => __('Google Analytics ID', 'options_check'),
