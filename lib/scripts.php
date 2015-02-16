@@ -11,34 +11,36 @@
  * 3. /theme/assets/js/main.min.js (in footer)
  */
 function roots_scripts() {
-  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '9880649384aea9f1ee166331c0a30daa');
+  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/app.min.css', false, '9880649384aea9f1ee166331c0a30daa');
 
   // Fonts stylesheets
-  $fonts = array(
+  $fonts = [
     'Cabin:400,500,600,700,400italic,500italic',
     'Raleway:400,700',
-    );
+    ];
   $font_stylesheet = '//fonts.googleapis.com/css?family=' . implode('|', $fonts);
   wp_register_style( 'google_font', $font_stylesheet );
   wp_enqueue_style( 'google_font' );
 
-    wp_enqueue_style( 'fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', false, false, 'all' );
+  wp_enqueue_style( 'fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', false, false, 'all' );
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:
   // Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
   // It's kept in the header instead of footer to avoid conflicts with plugins.
-  if (!is_admin() && current_theme_supports('jquery-cdn')) {
+  if (!is_admin() && current_theme_supports('jquery-cdn')) 
+  {
     wp_deregister_script('jquery');
     wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), null, false);
     add_filter('script_loader_src', 'roots_jquery_local_fallback', 10, 2);
   }
 
-  if (is_single() && comments_open() && get_option('thread_comments')) {
+  if (is_single() && comments_open() && get_option('thread_comments')) 
+  {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
-  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '0fc6af96786d8f267c8686338a34cd38', true);
+  //wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
+  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/all.min.js', array(), '0fc6af96786d8f267c8686338a34cd38', true);
   
   // wp_enqueue_script('modernizr');
   wp_enqueue_script('jquery');

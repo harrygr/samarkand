@@ -14,8 +14,21 @@
  * remove or comment out: add_theme_support('jquery-cdn');
  * ======================================================================== */
 
+
+
  (function($) {
 
+        // Detect shipping country change
+        $('select[name=calc_shipping_country]').change(function() {
+          setTimeout(addBootstrapClasses, 2);
+        });
+
+        // Add bootstrap classes to form inputs
+        function addBootstrapClasses()
+        {          
+          var $inputs = $('select, input[type=text]');
+          $('select, input[type=text]').addClass('form-control');
+        }
 
 // Use this variable to set up the common and page specific functions. If you 
 // rename this variable, you will also need to rename the namespace below.
@@ -23,6 +36,8 @@ var Roots = {
   // All pages
   common: {
     init: function() {
+
+
       $(function(){
         //Add the 'zoom' class to image links
         $('a[href*=".png"], a[href*=".gif"], a[href*=".jpeg"], a[href*=".jpg"]').each(function() {
@@ -36,6 +51,8 @@ var Roots = {
           padding: 0,
           title: false
         });
+
+
 
         var $mainImageContainer = $('a.woocommerce-main-image');
 

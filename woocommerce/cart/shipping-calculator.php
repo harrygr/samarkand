@@ -42,13 +42,13 @@ if ( get_option( 'woocommerce_enable_shipping_calc' ) === 'no' || ! WC()->cart->
 				// Hidden Input
 				if ( is_array( $states ) && empty( $states ) ) {
 
-					?><input type="hidden" name="calc_shipping_state" id="calc_shipping_state" placeholder="<?php _e( 'State / county', 'woocommerce' ); ?>" /><?php
+					?><input type="hidden" class="form-control" name="calc_shipping_state" id="calc_shipping_state" placeholder="<?php _e( 'State / county', 'woocommerce' ); ?>" /><?php
 
 				// Dropdown Input
 				} elseif ( is_array( $states ) ) {
 
 					?><span>
-						<select name="calc_shipping_state" id="calc_shipping_state" placeholder="<?php _e( 'State / county', 'woocommerce' ); ?>">
+						<select name="calc_shipping_state" class="form-control" id="calc_shipping_state" placeholder="<?php _e( 'State / county', 'woocommerce' ); ?>">
 							<option value=""><?php _e( 'Select a state&hellip;', 'woocommerce' ); ?></option>
 							<?php
 								foreach ( $states as $ckey => $cvalue )

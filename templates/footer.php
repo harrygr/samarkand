@@ -20,7 +20,7 @@
 						if ( $url && $url != '' ) :
 							?>
 						<li>
-							<a href="<?php echo $url ?>">
+							<a target="_blank" href="<?php echo $url ?>">
 								<span class="fa-stack fa-lg">
 									<i class="fa fa-circle fa-stack-2x"></i>
 									<i class="fa fa-<?php echo $classname; ?> fa-stack-1x fa-inverse social-icon"></i>

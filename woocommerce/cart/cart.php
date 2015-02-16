@@ -133,7 +133,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<input type="submit" class="button btn btn-default" name="update_cart" value="<?php _e( 'Update Cart', 'woocommerce' ); ?>" />
 			<input type="submit" class="checkout-button button alt wc-forward btn btn-success" name="proceed" value="<?php _e( 'Proceed to Checkout', 'woocommerce' ); ?>" />
 
-			<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+			<?php //do_action( 'woocommerce_proceed_to_checkout' ); ?>
 
 			<?php wp_nonce_field( 'woocommerce-cart' ); ?>
 		</div>
